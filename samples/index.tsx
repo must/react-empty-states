@@ -31,7 +31,9 @@ function App() {
   return <div>
     <input type='text'
       placeholder='pokemon name ...'
+      value={q}
       onInput={e => setQ((e.target as any).value)}/>
+    <div onClick={() => setQ('')}>clear</div>
     <br/>
     <div>
       {
@@ -39,7 +41,9 @@ function App() {
           loadingList ?
             'loading ...' :
             <ul>
-              { list?.results.map(result => <div key={result.name}>{result.name} {result.url}</div>) }
+              { list?.results.map(result =>
+                <div key={result.name} onClick={() => setQ(result.name)}>{result.name} {result.url}</div>
+              )}
             </ul>
           : loading ?
             'loading ...' :
@@ -47,13 +51,14 @@ function App() {
               <div>{info?.height}</div>
               :
               <EmptyState
-                header={'header test'}
+                header={'We couldn\'t find it :('}
                 image={{ x1: EmptyStateImage, x2: EmptyStateImage2x, x3: EmptyStateImage3x }}
                 actions={[
-                  <Button>Another button thing</Button>
+                  <Button onClick={() => setQ('')}>Go back to the list of Pokemons</Button>,
+                  <Button onClick={() => setQ(list?.results[Math.floor(Math.random() * list.results.length)].name)}>Or try out a random one!</Button>
                 ]}
               >
-                <p>Teting this content</p>
+                <p>We have searched hard for a Pokemon with the name "{q}" but to no avail :/</p>
               </EmptyState>
       }
     </div>
