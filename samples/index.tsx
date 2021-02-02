@@ -38,10 +38,13 @@ function App() {
         q === '' ?
           loadingList ?
             'loading ...' :
-            list?.count ?
-              <ul>
-                { list.results.map(result => <div key={result.name}>{result.name} {result.url}</div>) }
-              </ul>
+            <ul>
+              { list?.results.map(result => <div key={result.name}>{result.name} {result.url}</div>) }
+            </ul>
+          : loading ?
+            'loading ...' :
+            info ?
+              <div>{info?.height}</div>
               :
               <EmptyState
                 header={'header test'}
@@ -52,9 +55,6 @@ function App() {
               >
                 <p>Teting this content</p>
               </EmptyState>
-          : loading ?
-            'loading ...' :
-            <div>{info?.height}</div>
       }
     </div>
   </div>;

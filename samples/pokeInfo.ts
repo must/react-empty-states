@@ -29,8 +29,12 @@ export async function pokeList(): Promise<PokeList> {
   return await res.json();
 }
 
-export async function pokeInfo(name: string): Promise<PokeInfo> {
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+export async function pokeInfo(name: string): Promise<PokeInfo | null> {
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
-  return await res.json();
+    return await res.json();
+  } catch {
+    return null;
+  }
 }
