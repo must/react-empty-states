@@ -24,12 +24,19 @@ const EmptyState: EmptyStateComponent = ((({
 }) => {
   const extractedImage = extractImage(image);
 
-  return (<div>
+  return <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+    }}
+  >
     <img src={extractedImage.src} srcSet={extractedImage.srcset}></img>
-    {header}
+    <h1>{header}</h1>
     {children}
-    {actions.map(action => action)}
-  </div>);
+    {actions.map((action, i) => <React.Fragment key={i}>{action}</React.Fragment>)}
+  </div>;
 })) as EmptyStateComponent;
 
 EmptyState.Button = Button;
