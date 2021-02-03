@@ -30,4 +30,33 @@
       cursor: pointer;
     }
   }
+  
+  .ResultsContainer {
+    width: 100%;
+
+    max-width: 50ch;
+  }
+
+  .PokeList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+
+    li {
+      padding: 1em 0.5em;
+      margin: 0.1em 0;
+
+      font-size: 17px;
+      
+      text-transform: capitalize;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: #efefef;
+      }
+    }
+  }
 }

@@ -21,7 +21,7 @@ function App() {
   const [info, loading] = useStream(q,
     filter(q => q !== ''),
     debounce(200),
-    map(query => fromPromise(pokeInfo(query))),
+    map(query => fromPromise(pokeInfo(query.toLocaleLowerCase()))),
     flatten,
   );
 
@@ -44,20 +44,25 @@ function App() {
       ><AiOutlineClear/></div>
     </div>
     <br/>
-    <div>
+    <div className={styles.ResultsContainer}>
       {
         q === '' ?
           loadingList ?
             'loading a list of Pokemons ...' :
-            <ul>
+            <ul className={styles.PokeList}>
               { list?.results.map(result =>
-                <div key={result.name} onClick={() => setQ(result.name)}>{result.name} {result.url}</div>
+                <li key={result.name} onClick={() => setQ(result.name)}>{result.name}</li>
               )}
             </ul>
           : loading ?
             `searching for a Pokemon with the name "${q}"...` :
             info ?
-              <div>{info?.height}</div>
+              <div>
+                Found your Pokemon "{info?.name}"! It has a height of {info?.height} and the following abilities:
+                <ul>
+                  {info.abilities.map(ability => <li>{ability.ability.name} at slot {ability.slot}</li>)}
+                </ul>
+              </div>
               :
               <EmptyState
                 header={'We couldn\'t find it :('}

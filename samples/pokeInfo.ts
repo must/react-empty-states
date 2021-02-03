@@ -21,6 +21,7 @@ export type PokeInfo = {
   height: number;
   base_experience: number;
   abilities: Ability[];
+  name: string;
 };
 
 export async function pokeList(): Promise<PokeList> {
