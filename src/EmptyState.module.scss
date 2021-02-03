@@ -1,0 +1,11 @@
+.EmptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  .Actions {
+    display: flex;
+  }
+}

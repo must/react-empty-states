@@ -1,8 +1,7 @@
 import React from 'react';
 
-const buttonStyle = {
-  margin: '10px 10px 10px 0'
-};
+import styles from './Button.module.scss';
+
 
 export type ButtonProps = {
   onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void);
@@ -10,6 +9,6 @@ export type ButtonProps = {
 
 export const Button: React.FC<ButtonProps> = ({onClick, children}) => (
   <button
-    style={buttonStyle}
+    className={styles.Button}
     onClick={onClick}>{children}</button>
 );

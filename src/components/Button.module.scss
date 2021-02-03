@@ -1,0 +1,15 @@
+.Button {
+  margin: 10px 10px 10px 0;
+  background: none;
+  outline: none;
+  border: 1px solid #eee;
+  min-height: 2em;
+  min-width: 10em;
+  padding: 1em 2em;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: #efefef;
+  }
+}

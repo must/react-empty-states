@@ -2,6 +2,8 @@ import React, {ReactNode} from 'react';
 
 import { extractImage, Image } from './util/extractImage';
 import { Button } from './components/Button';
+import styles from './EmptyState.module.scss';
+
 
 export { Button } from './components/Button';
 export { Image } from './util/extractImage';
@@ -24,19 +26,13 @@ const EmptyState: EmptyStateComponent = ((({
 }) => {
   const extractedImage = extractImage(image);
 
-  return <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      flexDirection: 'column',
-      fontFamily: '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
-    }}
-  >
+  return <div className={styles.EmptyState}>
     <img src={extractedImage.src} srcSet={extractedImage.srcset}></img>
     <h1>{header}</h1>
     {children}
-    {actions.map((action, i) => <React.Fragment key={i}>{action}</React.Fragment>)}
+    <div className={styles.Actions}>
+      {actions.map((action, i) => <React.Fragment key={i}>{action}</React.Fragment>)}
+    </div>
   </div>;
 })) as EmptyStateComponent;
 
