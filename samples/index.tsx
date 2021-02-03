@@ -12,6 +12,9 @@ import { debounce, flatten, map, fromPromise, filter } from 'callbag-common';
 
 import { pokeInfo, pokeList } from './pokeInfo';
 
+import styles from './styles/App.module.scss';
+
+import { AiOutlineClear } from 'react-icons/ai';
 
 function App() {
   const [q, setQ] = useState('');
@@ -28,25 +31,31 @@ function App() {
     flatten,
   );
 
-  return <div>
-    <input type='text'
-      placeholder='pokemon name ...'
-      value={q}
-      onInput={e => setQ((e.target as any).value)}/>
-    <div onClick={() => setQ('')}>clear</div>
+  return <div className={styles.App}>
+    <div className={styles.SearchContainer}>
+      <input type='text'
+        className={styles.SearchBar}
+        placeholder='pokemon name ...'
+        value={q}
+        onInput={e => setQ((e.target as any).value)}/>
+      <div
+        onClick={() => setQ('')}
+        className={styles.ClearAction}
+      ><AiOutlineClear/></div>
+    </div>
     <br/>
     <div>
       {
         q === '' ?
           loadingList ?
-            'loading ...' :
+            'loading a list of Pokemons ...' :
             <ul>
               { list?.results.map(result =>
                 <div key={result.name} onClick={() => setQ(result.name)}>{result.name} {result.url}</div>
               )}
             </ul>
           : loading ?
-            'loading ...' :
+            `searching for a Pokemon with the name "${q}"...` :
             info ?
               <div>{info?.height}</div>
               :

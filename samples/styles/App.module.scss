@@ -1,0 +1,33 @@
+.App {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  .SearchContainer {
+    position: relative;
+
+    .SearchBar {
+      border: 1px solid #eee;
+      width: 40ch;
+      height: 3vh;
+
+      border-radius: 5px;
+
+      padding: 0.5em 1em;
+      font-size: 1em;
+
+      outline: none;
+    }
+
+    .ClearAction {
+      position: absolute;
+      right: 1em;
+      top: 50%;
+      margin-top: -9px;
+
+      cursor: pointer;
+    }
+  }
+}

@@ -30,6 +30,7 @@ const EmptyState: EmptyStateComponent = ((({
       alignItems: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
+      fontFamily: '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
     }}
   >
     <img src={extractedImage.src} srcSet={extractedImage.srcset}></img>
