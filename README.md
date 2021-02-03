@@ -10,6 +10,8 @@
 
 </div>
 
+For a quick try of the end result of using this component 👉 [go here](https://must.github.io/react-empty-states/).
+
 This work is inspired by [Shopify's polaris empty-state component](https://polaris.shopify.com/components/structure/empty-state) and [Pluralsight's design system](https://design-system.pluralsight.com/components/emptystate).
 
 ## Useful commands
