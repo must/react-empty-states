@@ -10,6 +10,7 @@
     "watch": "webpack --config ./conf/webpack/dev.conf.ts --watch",
     "test": "ts-node --files --project conf/typescript/test.json test.ts",
     "build-bundle": "webpack --config ./conf/webpack/prod.conf.ts",
+    "build-sample": "webpack --config ./conf/webpack/sample.conf.ts",
     "build-es5": "tsc -p conf/typescript/es5.json",
     "build-es6": "tsc -p conf/typescript/es6.json",
     "build": "npm run build-es5 && npm run build-es6",
