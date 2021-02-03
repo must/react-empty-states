@@ -1,6 +1,6 @@
 {
   "name": "react-empty-states",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a react empty state component",
   "main": "dist/es5/index.js",
   "module": "dist/es6/index.js",
