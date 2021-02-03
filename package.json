@@ -1,6 +1,6 @@
 {
   "name": "react-empty-states",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a react empty state component",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -22,9 +22,7 @@
   },
   "sideEffects": false,
   "files": [
-    "dist/es6",
-    "dist/es5",
-    "dist/bundles"
+    "dist/"
   ],
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0"
