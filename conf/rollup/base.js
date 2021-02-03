@@ -1,8 +1,18 @@
+import packageJson from '../../package.json';
+
 export default {
-  input: 'dist/es6/index.js',
-  output: {
-    name: 'reactCallbagStreams',
-    format: 'iife',
-  },
+  input: './src/index.tsx',
+  output: [
+    {
+      file: packageJson.main,
+      format: 'cjs',
+      sourcemap: true
+    },
+    {
+      file: packageJson.module,
+      format: 'esm',
+      sourcemap: true
+    }
+  ],
 };
 
