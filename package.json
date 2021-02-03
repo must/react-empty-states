@@ -100,7 +100,8 @@
     "extends": "nyc-config-tsx",
     "all": true,
     "include": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "src/**/*.tsx"
     ],
     "exclude": [
       "src/**/test/*"
